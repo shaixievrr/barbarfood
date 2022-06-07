@@ -1,204 +1,385 @@
-    html {
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-    }
-    
-    * {
+html {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat Alternates', sans-serif;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+ ::-webkit-scrollbar {
+    display: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    max-width: 1376px;
+    margin: 0 auto;
+}
+
+
+/* ----------header----------- */
+
+.header {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.05);
+    border-radius: 0px 0px 16px 16px;
+    margin-bottom: 32px;
+}
+
+.header__wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.header__logo {
+    margin-right: 34px;
+}
+
+.header__navigation-title {
+    display: none;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+}
+
+.nav-list__item {
+    margin-right: 26px;
+}
+
+.nav-list__item a {
+    color: black;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    text-decoration: none;
+}
+
+.header__location {
+    display: flex;
+    align-items: center;
+    margin-right: 34px;
+}
+
+.header__location-image {
+    margin-right: 12px;
+}
+
+.header__location-text {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    color: #DD052E;
+}
+
+.header__basket-link {
+    width: 107px;
+    height: 32px;
+    padding: 6px 20px;
+    background: #DD052E;
+    box-shadow: 0px 2px 14px rgba(222, 95, 90, 0.4);
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 18px;
+    text-align: center;
+    color: #F5F5F5;
+}
+
+.header__basket-link--mobile {
+    display: none;
+}
+
+@media (max-width: 1376px) {
+    .header {
         margin: 0;
         padding: 0;
+        padding-top: 10px;
+        border: none;
+        box-shadow: none;
     }
-    
-    body {
-        font-family: 'Montserrat Alternates', sans-serif;
+    .header::before {
+        position: absolute;
+        top: 45px;
+        content: "";
+        display: block;
+        width: 100%;
+        height: 1px;
+        border-top: 1px solid #F5F6F7;
     }
-    
-    a {
-        text-decoration: none;
+    .header::after {
+        position: absolute;
+        top: 133px;
+        content: "";
+        display: block;
+        width: 100%;
+        height: 1px;
+        border-top: 1px solid #F5F6F7;
     }
-    
-    img {
-        max-width: 100%;
-        height: auto;
-    }
-    
-    ul {
-        list-style: none;
-    }
-    
-    .container {
-        max-width: 1376px;
-        margin: 0 auto;
-    }
-    
-    .header {
-        padding-top: 25px;
-        padding-bottom: 25px;
-        box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.05);
-        border-radius: 0px 0px 16px 16px;
-        margin-bottom: 32px;
-    }
-    
     .header__wrapper {
-        display: flex;
-        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-left: 20px;
+        margin-bottom: 20px;
     }
-    
     .header__logo {
-        margin-right: 34px;
+        margin: 0;
     }
-    
-    .nav-list {
-        display: flex;
-        align-items: center;
-    }
-    
-    .nav-list__item {
-        margin-right: 26px;
-    }
-    
-    .nav-list__item a {
-        color: black;
-        font-weight: 600;
-        font-size: 14px;
-        line-height: 16px;
-        text-decoration: none;
-    }
-    
     .header__location {
-        display: flex;
-        align-items: center;
-        margin-right: 34px;
+        order: -1;
+        margin: 0;
+        vertical-align: middle;
     }
-    
-    .header__location-image {
-        margin-right: 12px;
-    }
-    
     .header__location-text {
-        font-style: normal;
+        display: none;
+    }
+    .header__navigation-title {
+        display: block;
+        position: absolute;
+        top: 61px;
+        left: 20px;
         font-weight: 600;
         font-size: 14px;
-        line-height: 16px;
-        color: #DD052E;
+        line-height: 22px;
     }
-    
-    .header__basket-link {
-        width: 107px;
-        height: 32px;
-        padding: 6px 20px;
-        background: #DD052E;
-        box-shadow: 0px 2px 14px rgba(222, 95, 90, 0.4);
-        border-radius: 6px;
+    .header__navigation {
+        position: relative;
+        order: 5;
+        flex-basis: 100%;
+        overflow-x: scroll;
+        padding-top: 52px;
+        padding-bottom: 20px;
+    }
+    .nav-list__item {
+        margin-right: 10px;
+        padding: 4px 12px;
+        text-align: center;
+        background: rgba(54, 70, 93, 0.04);
+        border-radius: 5px;
         font-weight: 600;
         font-size: 12px;
         line-height: 18px;
-        text-align: center;
-        color: #F5F5F5;
+        color: rgba(54, 70, 93, 0.6);
     }
-    
+    .header__basket-link--mobile {
+        display: block;
+        margin-right: 20px;
+    }
+    .header__basket-link {
+        display: none;
+    }
+}
+
+
+/* ----------promo----------- */
+
+.promo {
+    margin-bottom: 40px;
+}
+
+.promo__heading,
+.shawarma__heading {
+    margin-bottom: 24px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.promo__img {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    position: relative;
+    left: -10px;
+}
+
+@media (max-width: 1376px) {
     .promo {
-        margin-bottom: 40px;
+        margin-left: 20px;
     }
-    
     .promo__heading,
     .shawarma__heading {
-        margin-bottom: 24px;
-        font-style: normal;
         font-weight: 600;
-        font-size: 24px;
+        font-size: 16px;
         line-height: 24px;
-        color: #000000;
     }
-    
     .promo__img {
-        padding: 0;
         display: flex;
-        align-items: center;
-        position: relative;
-        left: -10px;
-    }
-    
-    .shawarma__list {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
         flex-wrap: wrap;
     }
-    
+    .promo__img img {
+        width: 100%
+    }
+    .promo__img-two {
+        display: none;
+    }
+}
+
+
+/* ----------shawarma----------- */
+
+.shawarma__list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.card {
+    position: relative;
+    width: 313px;
+    min-height: 397px;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 9px rgba(18, 18, 18, 0.07);
+    border-radius: 8px;
+    margin-bottom: 24px;
+}
+
+.card__wrapper {
+    margin: 16px 20px;
+}
+
+.card__title {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 30px;
+    color: #000000;
+    margin-bottom: 8px;
+}
+
+.card__tasty-mark {
+    position: absolute;
+    top: 250px;
+    left: 69px;
+    padding: 0 10px;
+    width: 76px;
+    height: 15px;
+    background: rgba(221, 5, 46, 0.08);
+    border-radius: 2px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    color: #DD052E;
+}
+
+.card__description {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    color: #000000;
+    opacity: 0.6;
+    margin-bottom: 80px;
+    max-width: 273px;
+}
+
+.card__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 0;
+    width: 273px;
+    padding-bottom: 16px;
+}
+
+.card__price {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.card__button {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 14px;
+    color: #FFFFFF;
+    padding: 4px 12px;
+    background: #DD052E;
+    border-radius: 4px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+@media (max-width: 1376px) {
+    .shawarma {
+        margin-left: 20px;
+    }
+    .shawarma__list {
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+    }
     .card {
-        position: relative;
-        width: 313px;
-        min-height: 397px;
-        background: #FFFFFF;
-        box-shadow: 0px 2px 9px rgba(18, 18, 18, 0.07);
-        border-radius: 8px;
-        margin-bottom: 24px;
+        min-width: 152px;
+        min-height: 259px;
+        margin-right: 12px;
     }
-    
     .card__wrapper {
-        margin: 16px 20px;
+        margin: 8px 12px 12px;
     }
-    
     .card__title {
-        font-style: normal;
         font-weight: 800;
-        font-size: 20px;
-        line-height: 30px;
-        color: #000000;
-        margin-bottom: 8px;
+        font-size: 16px;
+        line-height: 18px;
     }
-    
-    .card__tasty-mark {
-        position: absolute;
-        top: 250px;
-        left: 69px;
-        padding: 0 10px;
-        width: 76px;
-        height: 15px;
-        background: rgba(221, 5, 46, 0.08);
-        border-radius: 2px;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 12px;
-        color: #DD052E;
-    }
-    
     .card__description {
-        font-style: normal;
         font-weight: 400;
-        font-size: 16px;
-        line-height: 21px;
-        color: #000000;
-        opacity: 0.6;
-        margin-bottom: 80px;
-        max-width: 273px;
-    }
-    
-    .card__footer {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        position: absolute;
-        bottom: 0;
-        width: 273px;
-        padding-bottom: 16px;
-    }
-    
-    .card__price {
-        font-weight: 700;
-        font-size: 16px;
-        line-height: 24px;
-        color: #000000;
-    }
-    
-    .card__button {
-        font-weight: 600;
-        font-size: 12px;
+        font-size: 10px;
         line-height: 14px;
-        color: #FFFFFF;
-        padding: 4px 12px;
-        background: #DD052E;
-        border-radius: 4px;
-        text-align: center;
-        vertical-align: middle;
+        margin-bottom: 12px;
     }
+    .card__tasty-mark {
+        top: 117px;
+        left: 60px;
+        width: 49px;
+        height: 11px;
+        padding: 0 6px;
+        background: #DD052E;
+        border-radius: 2px;
+        color: #FFFFFF;
+        font-weight: 600;
+        font-size: 8px;
+        line-height: 10px;
+    }
+    .card__footer {
+        display: block;
+        position: relative;
+    }
+    .card__price {
+        display: block;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 14px;
+        margin-bottom: 16px;
+    }
+    .card__button {
+        padding: 4px 26px;
+    }
+}
